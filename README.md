@@ -65,7 +65,11 @@ sudo apt install openvpn
    ```bash
    nameserver 8.8.8.8
    ```
-
+---
+### <b>Notes :</b>
++ Repeating a eap/phase 2 authentication wifi is illegal. Please do so at your own risk.
++ Add ssh keys to your openvpn server for easier reconnection.
++ Use <b>autossh</b> for maintaing the ssh connection in <b>case-2</b>
 
 
 
