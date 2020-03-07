@@ -3,13 +3,13 @@
 ---
 ## Instructions:
 ### <b>1. </b>Create a raspberrypi repeater :
-1. To do the same, follow any of the guides in as described [here](https://github.com/akss13/Raspberrypi-repeater).
+1. To do the same, follow any of the guides as described [here](https://github.com/akss13/Raspberrypi-repeater).
 2. Add additional routing rules above any existing routing rules:<br>
-```console
+```bash
 iptables -t nat -A POSTROUTING -o tun0 -j MASQUERADE
 ```
 + If iptables rule are being load from a file, then follow these instrucitons:
-```console
+```bash
 sudo iptables -F
 sudo iptables -t nat -F
 sudo iptables -X
@@ -19,7 +19,7 @@ sudo iptables -X
 
 ### <b>2. </b>Create a openvpn server :
 + Install openvpn on raspberrypi:
-```console
+```bash
 sudo apt install openvpn
 ```
 +  To create a openvpn server on any cloud service provider use this script [angristan](https://github.com/angristan/openvpn-install).
@@ -27,15 +27,15 @@ sudo apt install openvpn
    + Select all the default options provided in the script.  
    + Import the file to raspberrypi.
    + Run openvpn through CLI:
-   ```console
+   ```bash
    sudo openvpn filename.ovpn
    ```
    + Change settings in <b>/etc/resolv.conf</b> file:
-   ```console
+   ```bash
    nano /etc/resolv.conf
    ```
    + Comment all the lines in the file and add:
-   ```console
+   ```bash
    nameserver 8.8.8.8
    ```
 
@@ -43,26 +43,26 @@ sudo apt install openvpn
    + Select <b>tcp</b> when prompted while creating the openvpn server
    + Import the file to raspberrypi.
    + Add the following lines to the <b>.ovpn</b> file just above <b>verb 3</b>:
-   ```console
+   ```bash
     route 162.243.166.99 255.255.255.255 net_gateway
     socks-proxy 127.0.0.1 8008
    ```
    + Here <b>162.243.166.99</b> is your server's IP.
    + Open a ssh tunnel:
-   ```console
+   ```bash
    ssh -D 8008 root@162.243.166.99 -p 443
    ```
    + Here <b>443</b> is the port on which you can ssh your server. You can change or add ports in <b>/etc/ssh/sshd_config</b> as per your requirement.
    + Run openvpn through CLI:
-   ```console
+   ```bash
    sudo openvpn filename.ovpn
    ```
    + Change settings in <b>/etc/resolv.conf</b> file:
-   ```console
+   ```bash
    nano /etc/resolv.conf
    ```
    + Comment all the lines in the file and add:
-   ```console
+   ```bash
    nameserver 8.8.8.8
    ```
 
