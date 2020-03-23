@@ -66,10 +66,16 @@ sudo apt install openvpn
    nameserver 8.8.8.8
    ```
 ---
+### Automate using script
+This bash [script]() aims to automate the above steps. However it's still a bit buggy.
++ Dependencies
+   + autossh<br>
+    To install on debian based distros use :<br>
+    ```bash
+    sudo apt install autossh
+    ```
+---
 ### <b>Notes :</b>
 + Repeating a eap/phase 2 authentication wifi is illegal. Please do so at your own risk.
 + Add ssh keys to your openvpn server for easier reconnection.
-+ Use <b>autossh</b> for maintaing the ssh connection in <b>case-2</b>
-
-
-
++ Use <b>autossh</b> for maintaing the ssh connection in <b>case-2</b>.
