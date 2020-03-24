@@ -1,0 +1,7 @@
+{
+    "C_Cpp.clang_format_path": "/usr/bin/clang-format",
+    "terminal.integrated.fontFamily": "'PowerlineSymbols','Ubuntu Mono'",
+    "terminal.integrated.cursorStyle": "line"
+    // "terminal.explorerKind": "external"
+    // "terminal.integrated.shell.linux":"/usr/bin/terminator"
+}
