@@ -67,7 +67,7 @@ sudo apt install openvpn
    ```
 ---
 ### Automate using script
-This bash [script](https://github.com/akss13/Raspberrypi_openvpn_repeater/blob/master/automatescript.sh) aims to automate the above steps. However it's still a bit buggy.
+This bash [script](https://github.com/akss13/Raspberrypi_openvpn_repeater/blob/master/automatescript.sh) aims to automate the above steps in <b>case-2</b>. However it's still a bit buggy.
 + Dependencies
    + autossh<br>
     To install on debian based distros use :<br>
